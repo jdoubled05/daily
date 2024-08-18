@@ -10,9 +10,8 @@ song = {
     "songCover": None,
 }
 
-if __name__ == "__main__":
-
-    while song["songTitle"] == None or song["songArtist"] == None:
+def app():
+    while song["songTitle"] is None or song["songArtist"] is None:
         song["songTitle"], song["songArtist"] = getRandomSong()
         song["songAlbum"], song["songURLs"]["spotify"], song["songCover"] = (
             findSongSpotify(song["songTitle"])
@@ -21,3 +20,7 @@ if __name__ == "__main__":
     addSong(song)
     sendEmail(song)
     archiveSong(song)
+
+# Only run the task if the script is executed directly (not imported)
+if __name__ == "__main__":
+    app()
