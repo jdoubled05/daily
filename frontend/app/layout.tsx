@@ -7,8 +7,8 @@ import { Database } from "@/database.types";
 import { Notifications } from "@mantine/notifications";
 
 export const metadata = {
-  title: "My Mantine app",
-  description: "I have followed setup instructions carefully",
+  title: "daily.",
+  description: "Your new music journey",
 };
 
 export default function RootLayout({
