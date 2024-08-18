@@ -160,7 +160,7 @@ export default function Home() {
               {song && (
                 <Stack gap="xs">
                   <Title order={3} c="#f5f5f5">
-                    Today`&apos;`s Track!
+                    Today&apos;s Track!
                   </Title>
                   <Title order={2} style={{ lineHeight: 1 }} c="#f5f5f5">
                     {song.title}
