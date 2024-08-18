@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import backgroundImage from "../assets/backgroundImage.jpg";
 import { notifications } from "@mantine/notifications";
-import { getSong } from "./lib/supabaseClient";
+import { getSong } from "./supabase/supabaseClient";
 
 type Song = {
   title: string;

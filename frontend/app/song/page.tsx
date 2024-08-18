@@ -1,4 +1,4 @@
-import { getSong } from "../lib/supabaseClient";
+import { getSong } from "../supabase/supabaseClient";
 import React from "react";
 
 export default async function SongPage() {
