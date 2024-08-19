@@ -1,5 +1,5 @@
 # daily
-<link href={dailymusics.com} target="_blank">dailymusics.com</link>
+[dailymusics.com](dailymusics.com)  
 Provides a random song daily
 ## Frontend
 Hosted on Vercel
