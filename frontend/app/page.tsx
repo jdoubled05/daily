@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import backgroundImage from "../assets/backgroundImage.jpg";
 import { notifications } from "@mantine/notifications";
-import { getSong } from "./services/supabaseClient";
+import { addUser, getSong } from "./services/supabaseClient";
 
 type Song = {
   title: string;
@@ -104,29 +104,12 @@ export default function Home() {
 
   const handleSubmit = async (values: typeof form.values) => {
     try {
+      await addUser(values);
       await addContact(values);
       await sendWelcomeEmail(values);
       form.reset();
-      notifications.show({
-        color: "green",
-        title: "Oh! Well imagine..",
-        message: "Check your inbox! You have successfully subscribed!",
-      });
     } catch (error: any) {
-      console.log(error.message);
-      if (error.message.includes("duplicate key value")) {
-        notifications.show({
-          color: "red",
-          title: "Somebody once told...",
-          message: "You're already subscribed!",
-        });
-      } else {
-        notifications.show({
-          color: "red",
-          title: "Hello darkness, my old friend...",
-          message: "Something went wrong. Try again!",
-        });
-      }
+      console.log("Error message:", error.message);
     }
   };
 

@@ -56,12 +56,11 @@ const getId = async () => {
 };
 
 export async function addUser(values: User) {
-  getId().then(async (res) => {
-    const { error } = await supabase
-      .from("users")
-      .insert({ id: res, name: values.name, email: values.email });
-    if (error) {
-      throw error.message;
-    }
-  });
+  const id = await getId();
+  const { error } = await supabase
+    .from("users")
+    .insert({ id: id, name: values.name, email: values.email });
+  if (error) {
+    throw error;
+  }
 }
